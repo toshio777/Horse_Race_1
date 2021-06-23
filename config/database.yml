@@ -81,6 +81,8 @@ test:
 #
 production:
   <<: *default
-  database: Hores_Race_1_production
-  username: Hores_Race_1
-  password: <%= ENV['HORES_RACE_1_DATABASE_PASSWORD'] %>
+  # ***** 以下を修正 *****
+  database: Horse_Race_1_production
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
